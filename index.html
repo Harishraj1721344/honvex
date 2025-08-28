@@ -307,12 +307,12 @@
                     
                     <form class="contact-form">
                         <div class="form-row">
-                            <input type="text" placeholder="Name" class="form-input">
-                            <input type="email" placeholder="Email" class="form-input">
+                            <input required type="text" placeholder="Name" class="form-input">
+                            <input required type="email" placeholder="Email" class="form-input">
                         </div>
                         <div class="form-row">
-                            <input type="text" placeholder="Company" class="form-input">
-                            <input type="text" placeholder="Country" class="form-input">
+                            <input required type="text" placeholder="Company" class="form-input">
+                            <input required type="text" placeholder="Country" class="form-input">
                         </div>
                         <textarea placeholder="Write a message" class="form-textarea"></textarea>
                         <button type="submit" class="form-button">SUBMIT</button>
@@ -368,7 +368,7 @@
 <script>
 (function() {
     // Initialize EmailJS with your public key
-    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+    emailjs.init("QnMVHR3KmltDgxlsD"); // Replace with your EmailJS public key
 })();
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -406,7 +406,7 @@ Message: ${message}
         };
 
         // Send email using EmailJS
-        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+        emailjs.send("service_vrd8rkv", "template_o272ykr", templateParams)
             .then(function(response) {
                 alert("Message sent successfully!");
                 form.reset();
