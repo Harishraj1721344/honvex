@@ -362,13 +362,14 @@
     </footer>
 </body>
 </html>
-<!-- Include EmailJS SDK -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
 (function() {
     // Initialize EmailJS with your public key
-    emailjs.init("TPVcA2JCjDhf7Ld6"); // Replace with your EmailJS public key
+    emailjs.init({
+        publicKey: "TPVcA2JCjDhf7Ld6_" // Replace with your EmailJS public key
+    });
 })();
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -384,35 +385,23 @@ document.addEventListener("DOMContentLoaded", function() {
         const country = form.querySelector('input[placeholder="Country"]').value;
         const message = form.querySelector('textarea').value;
 
-        // Compose formatted message
-        const formattedMessage = `
-New Contact Form Submission:
-
-Name: ${name}
-Email: ${email}
-Company: ${company}
-Country: ${country}
-Message: ${message}
-        `;
-
-        // Prepare data for EmailJS template
+        // Template parameters (must match EmailJS template variables)
         const templateParams = {
-            to_email: "harishraj1721334@gmail.com,kishoreabi1721349@gmail.com", // multiple emails separated by comma
             from_name: name,
             from_email: email,
             company: company,
             country: country,
-            message: formattedMessage
+            message: message
         };
 
-        // Send email using EmailJS
-        emailjs.send("service_vrd8rkv", "template_o272ykr", templateParams)
+        // Send email
+        emailjs.send("service_vrd8rkv", "honvex_123", templateParams)
             .then(function(response) {
                 alert("Message sent successfully!");
                 form.reset();
             }, function(error) {
-                alert("Failed to send message. Please try again later.");
-                console.error("EmailJS Error:", error);
+                alert("Failed to send message. Check console for details.");
+                console.error("EmailJS Error:", JSON.stringify(error));
             });
     });
 });
