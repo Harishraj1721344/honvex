@@ -676,7 +676,7 @@ input[placeholder="Search...."]:focus {
         /* Footer Section */
         .footer {
             padding: 4rem 0 2rem;
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('3.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('image/3.jpg');
             background-size: cover;
             background-position: center;
             color: white;
